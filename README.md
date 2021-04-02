@@ -6,7 +6,7 @@ Through the help of image processing.
 # Why will you make it?
 This is a concept that we can use in warehouses to transfer goods from one place to another and with the help of our 
 idea we can increase time efficiency.
-#What problem does it solve?
+# What problem does it solve?
 It will help solve a great problem for warehouses where there's a lot of goods to transfer from one place to the other,
 # How are you going to make it?
 Right now we have the idea of making this into work by using the ultrasonic sensors where we can say that the carrier car 
