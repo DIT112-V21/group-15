@@ -1,4 +1,5 @@
 # group-15
+![logo](https://user-images.githubusercontent.com/71884388/113401838-58488780-93a4-11eb-9a9e-cc0b51024e09.png)
 # What are you going to make?
 We are going to make a car that can be controlled by an application. As a stretch goal we have the idea
 of creating an autonomous warehouse smart car with a carrier (Automated storage car) which follows the smart car in front of it.
