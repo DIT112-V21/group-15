@@ -1,7 +1,7 @@
 #include <Smartcar.h>
 
-const int fSpeed   = 50;  // 50% of the full speed forward
-const int bSpeed   = -50; // 50% of the full speed backward
+const int fSpeed   = 70;  // 70% of the full speed forward
+const int bSpeed   = -70; // 70% of the full speed backward
 const int lDegrees = -75; // degrees to turn left
 const int rDegrees = 75;  // degrees to turn right
 
@@ -9,11 +9,26 @@ const int TRIGGER_PIN           = 6; // D6
 const int ECHO_PIN              = 7; // D7
 const unsigned int MAX_DISTANCE = 100;
 
+const int FRONT_IR_PIN = 0;
+const int LEFT_IR_PIN  = 1;
+const int RIGHT_IR_PIN = 2;
+const int BACK_IR_PIN  = 3;
+
+
 ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
 BrushedMotor rightMotor(arduinoRuntime, smartcarlib::pins::v2::rightMotorPins);
 DifferentialControl control(leftMotor, rightMotor);
 SR04 front(arduinoRuntime, TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
+
+
+GP2Y0A21 frontIR(arduinoRuntime, FRONT_IR_PIN);
+GP2Y0A21 leftIR(arduinoRuntime, LEFT_IR_PIN);
+GP2Y0A21 rightIR(arduinoRuntime, RIGHT_IR_PIN);
+GP2Y0A21 backIR(arduinoRuntime,BACK_IR_PIN);
+
+
+
 
 SimpleCar car(control);
 
@@ -27,7 +42,7 @@ void loop()
 {
     handleInput();
     getsensordistance();
-
+    Objectavoid ();
 }
 
 void handleInput()
@@ -70,14 +85,14 @@ void getsensordistance()
 
 void Objectavoid ()
 {
-  if(front.getDistance() >= 30)
+  int distance = front.getDistance();
+  if(distance > 0 && distance < 100)
   {
      stopCar();
-     delay (200);
-     backward();
-     delay (300);
-     stopCar();
-
+     delay(400);
+     lookleft();
+     lookright();
+     lookback();
   }
 }
 
@@ -86,32 +101,50 @@ void stopCar ()
 car.setSpeed(0);
 }
 
-void forward()
+void lookleft()
 {
-  car.setSpeed (40);
-}
+  int leftdistance = leftIR.getDistance();
 
-void backward()
-{
-  car.setSpeed (-40);
-}
-
-void leftturn()
-{
-  car.setSpeed (30);
-  car.setAngle (-95);
-  delay (2000);
-  car.setAngle(0);
-}
-
-void rightturn()
+  if(leftdistance > 15 && leftdistance < 60)
 {
   car.setSpeed (30);
   car.setAngle (95);
+  delay(2500);
+  car.setAngle(-95);
   delay(2000);
-  car.setAngle(0);
+  car.setSpeed(0);
+  handleInput();
+}
 }
 
 
+void lookright()
+{
+  int rightdistance = rightIR.getDistance();
 
+  if(rightdistance > 15 && rightdistance < 60)
+{
+  car.setSpeed (30);
+  car.setAngle (-95);
+  delay(2500);
+  car.setAngle(95);
+   delay(2000);
+  car.setSpeed(0);
+   handleInput();
 
+}
+}
+void lookback()
+{
+  int backdistance = backIR.getDistance();
+
+   if(backdistance > 15 && backdistance < 60)
+{
+  car.setSpeed(30);
+  car.setAngle(0);
+  delay(2000);
+  car.setSpeed(0);
+  handleInput();
+}
+
+}
