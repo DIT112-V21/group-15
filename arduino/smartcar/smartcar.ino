@@ -15,6 +15,7 @@ const int RIGHT_IR_PIN = 2;
 const int BACK_IR_PIN  = 3;
 
 
+
 ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
 BrushedMotor rightMotor(arduinoRuntime, smartcarlib::pins::v2::rightMotorPins);
@@ -29,7 +30,6 @@ GP2Y0A21 backIR(arduinoRuntime,BACK_IR_PIN);
 
 
 
-
 SimpleCar car(control);
 
 void setup()
@@ -41,7 +41,6 @@ void setup()
 void loop()
 {
     handleInput();
-    getsensordistance();
     Objectavoid ();
 }
 
@@ -69,18 +68,22 @@ void handleInput()
             car.setSpeed(bSpeed);
             car.setAngle(0);
             break;
+         case 'c': // checkside
+           car.setSpeed(0);
+           delay(400);
+           checksides();
+            break;
         default: // if you receive something that you don't know, just stop
             car.setSpeed(0);
             car.setAngle(0);
         }
     }
 }
+
 void getsensordistance()
 {
-
      Serial.println(front.getDistance());
      delay(100);
-
 }
 
 void Objectavoid ()
@@ -88,63 +91,62 @@ void Objectavoid ()
   int distance = front.getDistance();
   if(distance > 0 && distance < 100)
   {
+    Serial.println("Detected obstacle ahead. ");
+    Serial.println("Stopping the car. ");
      stopCar();
      delay(400);
-     lookleft();
-     lookright();
-     lookback();
+    Serial.println("Car is stopped. ");
+    checksides();
   }
 }
 
 void stopCar ()
 {
-car.setSpeed(0);
+  car.setSpeed(0);
 }
 
-void lookleft()
-{
-  int leftdistance = leftIR.getDistance();
-
-  if(leftdistance > 15 && leftdistance < 60)
+void turnright() //Basic turning todo (Improve truning implementation)
 {
   car.setSpeed (30);
   car.setAngle (95);
-  delay(2500);
-  car.setAngle(-95);
   delay(2000);
-  car.setSpeed(0);
-  handleInput();
+  car.setAngle (0);
+  car.setSpeed (0);
 }
-}
 
-
-void lookright()
-{
-  int rightdistance = rightIR.getDistance();
-
-  if(rightdistance > 15 && rightdistance < 60)
+void turnleft() //Basic turning todo (Improve truning implementation)
 {
   car.setSpeed (30);
   car.setAngle (-95);
-  delay(2500);
-  car.setAngle(95);
-   delay(2000);
-  car.setSpeed(0);
-   handleInput();
+  delay(2000);
+  car.setAngle (0);
+  car.setSpeed (0);
+}
 
-}
-}
-void lookback()
+void checksides()
 {
+  int leftdistance = leftIR.getDistance();
+  int rightdistance = rightIR.getDistance();
   int backdistance = backIR.getDistance();
 
-   if(backdistance > 15 && backdistance < 60)
+  if(leftdistance > 15 && leftdistance < 60)  //checking obstacle at leftside
 {
-  car.setSpeed(30);
-  car.setAngle(0);
-  delay(2000);
-  car.setSpeed(0);
-  handleInput();
+  Serial.println("Detected obstacle at left. ");
+  Serial.println("Turning right to avoid obstacle. ");
+  turnright();
 }
-
+  else if(rightdistance > 15 && rightdistance < 60) // checking obstacle at rightside
+{
+  Serial.println("Detected obstacle at right. ");
+  Serial.println("Turning left to avoid obstacle. ");
+  turnleft();
+}
+  else if (backdistance > 15 && backdistance < 60) // checking obstacle at back
+{
+  Serial.println("Detected obstacle at back. ");
+  Serial.println("Moving ahead ");
+  car.setSpeed(30);
+  delay(400);
+  stopCar();
+}
 }
