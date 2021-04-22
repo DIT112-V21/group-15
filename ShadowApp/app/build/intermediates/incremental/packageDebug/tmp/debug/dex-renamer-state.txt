@@ -1,4 +1,0 @@
-#Thu Apr 22 13:13:27 CEST 2021
-base.0=/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
