@@ -1816,10 +1816,6 @@ id bottom
 id bounce
 id button
 id button3
-id button4
-id button5
-id button7
-id button8
 id buttonPanel
 id cache_measures
 id cancel_button
@@ -2030,6 +2026,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id reverse
 id reverseSawtooth
 id right
 id rightToLeft
