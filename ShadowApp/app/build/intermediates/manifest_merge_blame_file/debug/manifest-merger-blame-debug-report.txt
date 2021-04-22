@@ -38,38 +38,37 @@
 22-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:11:9-54
 23        android:supportsRtl="true"
 23-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:12:9-35
-24        android:testOnly="true"
-25        android:theme="@style/Theme.ShadowApp" >
-25-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:13:9-47
-26        <activity android:name="com.example.shadowapp.MainActivity" >
-26-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:14:9-20:20
-26-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:14:19-47
-27            <intent-filter>
-27-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:15:13-19:29
-28                <action android:name="android.intent.action.MAIN" />
-28-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:16:17-69
-28-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:16:25-66
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:18:17-77
-30-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:18:27-74
-31            </intent-filter>
-32        </activity>
-33        <activity android:name="com.example.shadowapp.ControllerPage" />
-33-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:21:9-52
-33-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:21:19-49
-34
-35        <service android:name="org.eclipse.paho.android.service.MqttService" >
-35-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:23:9-25:19
-35-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:24:13-72
-36        </service>
-37
-38        <meta-data
-38-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:26:9-28:57
-39            android:name="preloaded_fonts"
-39-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:27:13-43
-40            android:resource="@array/preloaded_fonts" />
-40-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:28:13-54
-41    </application>
-42
-43</manifest>
+24        android:theme="@style/Theme.ShadowApp" >
+24-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:13:9-47
+25        <activity android:name="com.example.shadowapp.MainActivity" >
+25-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:14:9-20:20
+25-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:14:19-47
+26            <intent-filter>
+26-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:15:13-19:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:16:17-69
+27-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:16:25-66
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:18:17-77
+29-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:18:27-74
+30            </intent-filter>
+31        </activity>
+32        <activity android:name="com.example.shadowapp.ControllerPage" />
+32-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:21:9-52
+32-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:21:19-49
+33
+34        <service android:name="org.eclipse.paho.android.service.MqttService" >
+34-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:23:9-25:19
+34-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:24:13-72
+35        </service>
+36
+37        <meta-data
+37-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:26:9-28:57
+38            android:name="preloaded_fonts"
+38-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:27:13-43
+39            android:resource="@array/preloaded_fonts" />
+39-->/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/AndroidManifest.xml:28:13-54
+40    </application>
+41
+42</manifest>

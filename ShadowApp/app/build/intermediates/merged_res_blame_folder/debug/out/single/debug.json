@@ -36,12 +36,12 @@
         "source": "/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/jakobbergek/AndroidStudioProjects/ShadowApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher_background.png.flat",
