@@ -89,13 +89,18 @@ void getsensordistance()
 void Objectavoid ()
 {
   int distance = front.getDistance();
-  if(distance > 0 && distance < 100)
+  if(distance > 0 && distance < 75)
   {
     Serial.println("Detected obstacle ahead. ");
     Serial.println("Stopping the car. ");
      stopCar();
      delay(400);
-    Serial.println("Car is stopped. ");
+    Serial.println("Car is stopped, rotate the car. ");
+    car.setSpeed(bSpeed);
+    car.setAngle (200);
+    delay(1000);
+    car.setSpeed(fSpeed);
+     car.setAngle (0);
     checksides();
   }
 }
@@ -111,7 +116,7 @@ void turnright() //Basic turning todo (Improve truning implementation)
   car.setAngle (95);
   delay(2000);
   car.setAngle (0);
-  car.setSpeed (0);
+  car.setSpeed (70);
 }
 
 void turnleft() //Basic turning todo (Improve truning implementation)
@@ -120,7 +125,7 @@ void turnleft() //Basic turning todo (Improve truning implementation)
   car.setAngle (-95);
   delay(2000);
   car.setAngle (0);
-  car.setSpeed (0);
+  car.setSpeed (70);
 }
 
 void checksides()
@@ -145,8 +150,8 @@ void checksides()
 {
   Serial.println("Detected obstacle at back. ");
   Serial.println("Moving ahead ");
-  car.setSpeed(30);
-  delay(400);
-  stopCar();
+  car.setSpeed(70);
+  
 }
+
 }
