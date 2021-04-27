@@ -1,10 +1,25 @@
+#include <vector>
+
+#include <MQTT.h>
+#include <WiFi.h>
+#ifdef __SMCE__
+#include <OV767X.h>
+#endif
+
 #include <Smartcar.h>
+
+#ifndef __SMCE__
+WiFiClient net;
+#endif
+MQTTClient mqtt;
+
 
 const int fSpeed   = 70;  // 70% of the full speed forward
 const int bSpeed   = -70; // 70% of the full speed backward
 const int lDegrees = -75; // degrees to turn left
 const int rDegrees = 75;  // degrees to turn right
 
+const auto oneSecond = 1000UL;
 const int TRIGGER_PIN           = 6; // D6
 const int ECHO_PIN              = 7; // D7
 const unsigned int MAX_DISTANCE = 100;
@@ -31,17 +46,64 @@ GP2Y0A21 backIR(arduinoRuntime,BACK_IR_PIN);
 
 
 SimpleCar car(control);
+std::vector<char> frameBuffer;
 
 void setup()
 {
     Serial.begin(9600);
+
+     #ifdef __SMCE__
+  Camera.begin(QVGA, RGB888, 15);
+  frameBuffer.resize(Camera.width() * Camera.height() * Camera.bytesPerPixel());
+  mqtt.begin("aerostun.dev", 1883, WiFi);
+  // mqtt.begin(WiFi); // Will connect to localhost
+#else
+  mqtt.begin(net);
+#endif
+  if (mqtt.connect("arduino", "public", "public")) {
+    mqtt.subscribe("/smartcar/control/#", 1);
+    mqtt.onMessage([](String topic, String message) {
+      if (topic == "/smartcar/control/throttle") {
+        car.setSpeed(message.toInt());
+      } else if (topic == "/smartcar/control/steering") {
+        car.setAngle(message.toInt());
+      } else {
+        Serial.println(topic + " " + message);
+      }
+    });
+  }
 
 }
 
 void loop()
 {
     handleInput();
+    checksides();
     Objectavoid ();
+
+     if (mqtt.connected()) {
+    mqtt.loop();
+    const auto currentTime = millis();
+#ifdef __SMCE__
+    static auto previousFrame = 0UL;
+    if (currentTime - previousFrame >= 65) {
+      previousFrame = currentTime;
+      Camera.readFrame(frameBuffer.data());
+      mqtt.publish("/smartcar/camera", frameBuffer.data(), frameBuffer.size(),
+                   false, 0);
+    }
+#endif
+    static auto previousTransmission = 0UL;
+    if (currentTime - previousTransmission >= oneSecond) {
+      previousTransmission = currentTime;
+      const auto distance = String(front.getDistance());
+      mqtt.publish("/smartcar/ultrasound/front", distance);
+    }
+  }
+#ifdef __SMCE__
+  // Avoid over-using the CPU if we are running in the emulator
+  delay(35);
+#endif
 }
 
 void handleInput()
