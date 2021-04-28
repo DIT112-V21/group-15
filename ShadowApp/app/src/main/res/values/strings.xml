@@ -18,4 +18,5 @@
     <string name="downArrow">▼</string>
     <string name="caroverlook">Caroverlook</string>
     <string name="follow_car">FOLLOW CAR</string>
+    <string name="button">Button</string>
 </resources>

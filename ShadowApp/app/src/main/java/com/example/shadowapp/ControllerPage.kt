@@ -2,7 +2,6 @@ package com.example.shadowapp
 
 import android.content.Intent
 import android.graphics.Bitmap
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -41,7 +40,7 @@ class ControllerPage: AppCompatActivity() {
             onPause()
             Thread.sleep(4000)
             Animatoo.animateWindmill(this)
-            startActivity(Intent( this, MainActivity::class.java))
+            startActivity(Intent( this, GetReady::class.java))
             finish()
 
         }
