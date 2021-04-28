@@ -36,14 +36,13 @@ class ControllerPage: AppCompatActivity() {
         mCameraView = findViewById(R.id.imageView)
         connectToMqttBroker()
 
-        button3.setOnClickListener {
-            onPause()
-            Thread.sleep(4000)
-            Animatoo.animateWindmill(this)
-            startActivity(Intent( this, GetReady::class.java))
-            finish()
-
-        }
+    }
+    fun returnHome (view: View) {
+        val obj = ProgressButton(this@ControllerPage, view)
+        obj.ButtonActivated()
+        onPause()
+        startActivity(Intent(this, GetReady::class.java ))
+        obj.ButtonFinished()
 
     }
     fun forward(view: View) {
