@@ -19,4 +19,10 @@
     <string name="caroverlook">Caroverlook</string>
     <string name="follow_car">FOLLOW CAR</string>
     <string name="button">Button</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="profile">profile</string>
+    <string name="username">Username</string>
+    <string name="locker">locker</string>
+    <string name="stopbutton">◼</string>
 </resources>

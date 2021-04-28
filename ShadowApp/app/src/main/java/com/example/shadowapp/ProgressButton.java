@@ -20,7 +20,7 @@ class ProgressButton {
     Animation fade_in;
 
     ProgressButton(Context ct, View view) {
-
+        System.out.println("works");
         cardView = view.findViewById(R.id.cardView);
         layout = view.findViewById(R.id.constraint_layout);
         progressBar = view.findViewById(R.id.progressBar);
@@ -28,6 +28,7 @@ class ProgressButton {
     }
 
     void ButtonActivated() {
+        System.out.println("works fine");
         progressBar.setVisibility(View.VISIBLE);
 
     }
