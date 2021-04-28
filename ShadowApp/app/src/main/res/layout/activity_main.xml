@@ -1,87 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    android:keepScreenOn="true"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_edittext">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_person" />
+
+    <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_username"
+            android:hint="Enter Username"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:background="@android:color/transparent"/>
+</LinearLayout>
+
+    <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:padding="10dp"
+         android:layout_gravity="center"
+         android:layout_marginTop="10dp"
+         android:background="@drawable/round_edittext">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_lock_24"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_password"
+            android:hint="Enter Password"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/getReady"
-        android:layout_width="254dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="159dp"
-        android:layout_marginLeft="159dp"
-        android:layout_marginTop="341dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
-        android:layout_marginBottom="342dp"
-        android:background="@drawable/gradientbuttons"
-        android:fontFamily="@font/aldrich"
-        android:radius="1dp"
-        android:shadowColor="#FF8181"
-        android:shadowDx="0"
-        android:shadowDy="1"
-        android:shadowRadius="0"
-        android:soundEffectsEnabled="true"
-        android:text="@string/getready"
-        android:textSize="25sp"
-        app:backgroundTint="#0F2027"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="#FFFFFF"
-        app:strokeWidth="1sp" />
-
-    <TextView
-        android:id="@+id/shadowSmartcar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="201dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginBottom="127dp"
-        android:fontFamily="@font/aldrich"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="1"
-        android:text="@string/shadow_smartcar"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/getReady"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/bt_submit"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_button"/>
 
-    <TextView
-        android:id="@+id/allRights"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="46dp"
-        android:text="@string/all_rights_reserved_2021"
-        android:textColor="#FFFFFF"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <include
-        android:id="@+id/progressBar"
-        layout="@layout/progress_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823" />
+</LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
