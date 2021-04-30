@@ -1662,6 +1662,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bt_command
+drawable bt_submit
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1724,6 +1726,7 @@ drawable notify_panel_notification_icon_bg
 drawable phbrush
 drawable round_button
 drawable round_edittext
+drawable shadow_logo
 drawable sk_rmavbild_2021_04_17_kl__12_33_53
 drawable sk_rmavbild_2021_04_19_kl__10_17_25
 drawable strokeimage
@@ -1930,6 +1933,8 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView2
+id imageView4
 id info
 id invisible
 id inward
@@ -2118,7 +2123,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView2
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2425,6 +2429,8 @@ string rightArrows
 string search_menu_title
 string shadow_smartcar
 string sign_in
+string smart_car
+string smart_car1
 string start
 string status_bar_notification_info_overflow
 string stopbutton

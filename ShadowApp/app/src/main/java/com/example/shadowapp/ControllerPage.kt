@@ -2,14 +2,13 @@ package com.example.shadowapp
 
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.blogspot.atifsoftwares.animatoolib.Animatoo
-import kotlinx.android.synthetic.main.controllerpage.*
 import org.eclipse.paho.client.mqttv3.*
 
 class ControllerPage: AppCompatActivity() {
@@ -23,8 +22,8 @@ class ControllerPage: AppCompatActivity() {
     private val STRAIGHT_ANGLE = 0
     private val STEERING_ANGLE = 50
     private val QOS = 1
-    private val IMAGE_WIDTH = 320
-    private val IMAGE_HEIGHT = 240
+    private val IMAGE_WIDTH = 320 //320
+    private val IMAGE_HEIGHT = 240 //240
     private var mMqttClient: MqttClient? = null
     private var isConnected = false
     private var mCameraView: ImageView? = null
@@ -35,16 +34,16 @@ class ControllerPage: AppCompatActivity() {
         mMqttClient = MqttClient(applicationContext, MQTT_SERVER, TAG)
         mCameraView = findViewById(R.id.imageView)
         connectToMqttBroker()
-
     }
+
     fun returnHome (view: View) {
         val obj = ProgressButton(this@ControllerPage, view)
         obj.ButtonActivated()
         onPause()
         startActivity(Intent(this, GetReady::class.java ))
         obj.ButtonFinished()
-
     }
+
     fun forward(view: View) {
         drive(MOVEMENT_SPEED, STRAIGHT_ANGLE, "Forward!")
     }
@@ -61,10 +60,12 @@ class ControllerPage: AppCompatActivity() {
         drive(-MOVEMENT_SPEED, STRAIGHT_ANGLE, "Reverse")
     }
     override fun onResume() {
+
         super.onResume()
         connectToMqttBroker()
     }
     override fun onPause() {
+
         super.onPause()
         mMqttClient?.disconnect(object: IMqttActionListener {
             override fun onSuccess(asyncActionToken: IMqttToken) {
@@ -110,7 +111,7 @@ class ControllerPage: AppCompatActivity() {
                             val r = payload[3 * ci]
                             val g = payload[3 * ci + 1]
                             val b = payload[3 * ci + 2]
-                            //colors[ci] = Color.argb(r, g, b)
+                            colors[ci] = Color.rgb(r.toInt(), g.toInt(), b.toInt()) //camera related
                         }
                         bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)
                         mCameraView?.setImageBitmap(bm)
