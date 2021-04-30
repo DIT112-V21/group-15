@@ -25,4 +25,6 @@
     <string name="username">Username</string>
     <string name="locker">locker</string>
     <string name="stopbutton">◼</string>
+    <string name="smart_car">\@string/SMART CAR</string>
+    <string name="smart_car1">SMART CAR</string>
 </resources>
