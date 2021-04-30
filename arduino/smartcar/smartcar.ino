@@ -14,8 +14,8 @@ WiFiClient net;
 MQTTClient mqtt;
 
 
-const int fSpeed   = 70;  // 70% of the full speed forward
-const int bSpeed   = -70; // 70% of the full speed backward
+const int fSpeed   = 50;  // 70% of the full speed forward
+const int bSpeed   = -50; // 70% of the full speed backward
 const int lDegrees = -75; // degrees to turn left
 const int rDegrees = 75;  // degrees to turn right
 
@@ -78,8 +78,8 @@ void setup()
 void loop()
 {
     handleInput();
-    checksides();
-    Objectavoid ();
+    activeMovement();
+    Objectavoid();
 
      if (mqtt.connected()) {
     mqtt.loop();
@@ -151,7 +151,7 @@ void getsensordistance()
 void Objectavoid ()
 {
   int distance = front.getDistance();
-  if(distance > 0 && distance < 75)
+  if(distance > 0 && distance < 100)
   {
     Serial.println("Detected obstacle ahead. ");
     Serial.println("Stopping the car. ");
@@ -178,7 +178,7 @@ void turnright() //Basic turning todo (Improve truning implementation)
   car.setAngle (95);
   delay(2000);
   car.setAngle (0);
-  car.setSpeed (70);
+  car.setSpeed (50);
 }
 
 void turnleft() //Basic turning todo (Improve truning implementation)
@@ -187,7 +187,7 @@ void turnleft() //Basic turning todo (Improve truning implementation)
   car.setAngle (-95);
   delay(2000);
   car.setAngle (0);
-  car.setSpeed (70);
+  car.setSpeed (50);
 }
 
 void checksides()
@@ -199,21 +199,46 @@ void checksides()
   if(leftdistance > 15 && leftdistance < 60)  //checking obstacle at leftside
 {
   Serial.println("Detected obstacle at left. ");
+  delay(400);
   Serial.println("Turning right to avoid obstacle. ");
+  delay(400);
   turnright();
 }
   else if(rightdistance > 15 && rightdistance < 60) // checking obstacle at rightside
 {
   Serial.println("Detected obstacle at right. ");
+   delay(400);
   Serial.println("Turning left to avoid obstacle. ");
+   delay(400);
   turnleft();
 }
   else if (backdistance > 15 && backdistance < 60) // checking obstacle at back
 {
   Serial.println("Detected obstacle at back. ");
+   delay(400);
   Serial.println("Moving ahead ");
+   delay(400);
   car.setSpeed(70);
   
+}
+}
+
+void activeMovement()
+{
+  int leftside = leftIR.getDistance();
+  int rightside = rightIR.getDistance();
+  
+  if(leftside > 15 && leftside < 30)  //checking left side so the car dont hit while moving.
+{
+  car.setAngle (20);
+  delay(200);
+  car.setAngle(0);
+}
+  else if(rightside > 15 && rightside < 30) // checking right side so the car dont hit while moving.
+{
+  car.setAngle (-20);
+  delay(200);
+  car.setAngle(0);
 }
 
 }
