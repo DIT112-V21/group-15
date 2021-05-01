@@ -1,2 +1,0 @@
-com/example/animamea/BuildConfig.java
- com.example.animamea.BuildConfig
