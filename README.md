@@ -3,25 +3,20 @@
 ![logo](https://user-images.githubusercontent.com/71884388/113401838-58488780-93a4-11eb-9a9e-cc0b51024e09.png)
 # What are you going to make?
 
-We are going to make a car that can be controlled by an app. As a stretch goal we have the idea 
-of creating an autonomous warehouse smart car with a carrier (Automated storage car) which follows the smart car in front of it.
-Through the help of image processing.
+Our goal for this project is to make an Android application that enables users to cantrol smart cars. As a stretch goal we have the idea 
+of creating a voice command application that helps the users be able to control and manuever the car with only the use of their voice. 
 
 # Why will you make it?
 
-This is a concept that we can use in warehouses to transfer goods from one place to another and with the help of our 
-idea we can increase time efficiency.
+Our tool or application can enable people with disabilities to be able to drive and live a normal life. 
 
 # What problem does it solve?
 
-It will help solve a great problem for warehouses where there's a lot of goods to transfer from one place to the other,
+The system can be used for instance with amputees, or any other type of disability where these people still can use their voice. It will help amputees to at least be able to transport, and visit places without depending on someone else. 
 
 # How are you going to make it?
 
-Right now we have the idea of making this into work by using the ultrasonic sensors where we can say that the carrier car 
-maintains a specific distance from the car in front of it and if the distance exceeds the initial distance then the carrier moves.
-We can initialize this idea by using the camera that is implemented in the emulator. Through this we can process
-the images the car can detect what kind of object is in front of it.
+Right now we have the idea of making this into work by using the ultrasonic sensors where we can assure that the smart car will avoid obstacles all the time, because safety is our number one concern. As our stretch goal we want to make use of voice commands in the application where people can drive and control the car with the least effort of using just their voice.  
 
 # What kind of technology are you going to use?
 
