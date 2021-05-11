@@ -1,18 +1,18 @@
 # group-15
 
-![logo](https://user-images.githubusercontent.com/71884388/113401838-58488780-93a4-11eb-9a9e-cc0b51024e09.png)
+
 # What are you going to make?
 
-Our goal for this project is to make an Android application that enables users to cantrol smart cars. As a stretch goal we have the idea 
-of creating a voice command application that helps the users be able to control and manuever the car with only the use of their voice. 
+Our goal for this project is to make an Android application that enables users to control Arduino smart cars. As a stretch goal we have the idea 
+of creating a voice command application that helps users be able to control and manuever the car with only the use of their voice, making driving possible for everyone.  
 
 # Why will you make it?
 
-Our tool or application can enable people with disabilities to be able to drive and live a normal life. 
+Our tool or application can enable people with disabilities to be able to drive and ensure them to be able to travel without depending on someone else.  
 
 # What problem does it solve?
 
-The system can be used for instance with amputees, or any other type of disability where these people still can use their voice. It will help amputees to at least be able to transport, and visit places without depending on someone else. 
+The system can be used for instance with amputees, or any other type of disability where these people still can use their voice. It will help amputees to be able to travel and visit places without depending on someone else. 
 
 # How are you going to make it?
 
