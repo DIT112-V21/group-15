@@ -28,6 +28,7 @@ class GetReady : AppCompatActivity() {
             true
 
         }
+
     }
 
     private fun handleTouch(event: MotionEvent?) {

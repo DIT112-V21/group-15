@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/louismercier/StudioProjects/group-15 (kopia)/ShadowApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml",
+            "outputFile": "C:\\Users\\saveo\\Documents\\GitHub\\group-15\\ShadowApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
             "map": [
                 {
-                    "source": "/Users/louismercier/.gradle/caches/transforms-2/files-2.1/182c6f7fa206fcf9dfa64f742b56b7ac/appcompat-1.2.0/res/values-watch-v21/values-watch-v21.xml",
+                    "source": "C:\\Users\\saveo\\.gradle\\caches\\transforms-2\\files-2.1\\182c6f7fa206fcf9dfa64f742b56b7ac\\appcompat-1.2.0\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",
