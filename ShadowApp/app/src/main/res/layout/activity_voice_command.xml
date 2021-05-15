@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".VoiceCommand">
 
     <ImageButton
@@ -19,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.876"
+        app:layout_constraintVertical_bias="0.868"
         app:srcCompat="@android:drawable/ic_btn_speak_now"
         tools:ignore="VectorDrawableCompat"
         tools:srcCompat="@android:drawable/ic_btn_speak_now"
@@ -40,11 +41,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="386dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="144dp"
+        android:layout_width="379dp"
+        android:layout_height="337dp"
         android:contentDescription="@string/caroverlook"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.284" />
 </androidx.constraintlayout.widget.ConstraintLayout>

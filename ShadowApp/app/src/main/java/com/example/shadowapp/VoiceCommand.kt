@@ -20,10 +20,10 @@ class VoiceCommand : AppCompatActivity() {
     private val MQTT_SERVER = "tcp://$EXTERNAL_MQTT_BROKER:1883"
     private val THROTTLE_CONTROL = "/smartcar/control/throttle"
     private val STEERING_CONTROL = "/smartcar/control/steering"
-    private val MOVEMENT_SPEED = 70
+    private val MOVEMENT_SPEED = 50
     private val IDLE_SPEED = 0
     private val STRAIGHT_ANGLE = 0
-    private val STEERING_ANGLE = 50
+    private val STEERING_ANGLE = 30
     private val QOS = 1
     private val IMAGE_WIDTH = 320 //320
     private val IMAGE_HEIGHT = 240 //240
@@ -65,15 +65,20 @@ class VoiceCommand : AppCompatActivity() {
             val vCommand=result[0]
             textView.text = result[0]
 
-            when (vCommand){
-                "move forward"  -> forward()
-                "turn right" -> right()
-                "turn left" -> left()
-                "move backwards" -> reverse()
-                "stop" -> stop()
-                else -> Toast.makeText(applicationContext,"Invalid Command",Toast.LENGTH_SHORT).show()
-
+            if(vCommand.contains("forward")){
+                forward()
+            } else if (vCommand.contains("turn right")){
+                right()
+            } else if (vCommand.contains("turn left")){
+                left()
+            } else if (vCommand.contains("backward")){
+                reverse()
+            } else if (vCommand.contains("stop")){
+                stop()
+            }else{
+                Toast.makeText(applicationContext,"Invalid Command",Toast.LENGTH_SHORT).show()
             }
+
         }
 }
     private fun forward() {

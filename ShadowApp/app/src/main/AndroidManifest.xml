@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShadowApp">
-        <activity android:name=".VoiceCommand" android:parentActivityName=".ControllerPage"></activity>
+        <activity android:name=".OptionPage"></activity>
+        <activity
+            android:name=".VoiceCommand"
+            android:parentActivityName=".ControllerPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ControllerPage"
+        <activity
+            android:name=".ControllerPage"
             tools:ignore="Instantiatable" />
         <activity android:name=".GetReady">
             <intent-filter>
@@ -34,7 +38,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="org.eclipse.paho.android.service.MqttService"></service>
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
 
         <meta-data
             android:name="preloaded_fonts"
