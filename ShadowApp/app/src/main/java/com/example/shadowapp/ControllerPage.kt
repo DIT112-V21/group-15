@@ -10,11 +10,10 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.controllerpage.*
-import kotlinx.android.synthetic.main.get_ready.*
 import org.eclipse.paho.client.mqttv3.*
 import java.util.*
 
-class ControllerPage(intent: Intent) : AppCompatActivity() {
+class ControllerPage : AppCompatActivity() {
     private val TAG = "ShadowApp"
     private val EXTERNAL_MQTT_BROKER = "aerostun.dev"
     private val MQTT_SERVER = "tcp://$EXTERNAL_MQTT_BROKER:1883"
@@ -42,16 +41,12 @@ class ControllerPage(intent: Intent) : AppCompatActivity() {
 
         }
 
-    }
+       forward.setOnClickListener({forward()})
+       reverse.setOnClickListener({reverse()})
+       right.setOnClickListener({right()})
+       left.setOnClickListener({left()})
+       stop.setOnClickListener({stop()})
 
-
-
-    fun returnHome (view: View) {
-        val obj = ProgressButton(this@ControllerPage, view)
-        obj.ButtonActivated()
-        onPause()
-        startActivity(Intent(this, GetReady::class.java ))
-        obj.ButtonFinished()
     }
 
     fun forward() {
@@ -74,17 +69,7 @@ class ControllerPage(intent: Intent) : AppCompatActivity() {
         super.onResume()
         connectToMqttBroker()
     }
-    override fun onPause() {
 
-        super.onPause()
-        mMqttClient?.disconnect(object: IMqttActionListener {
-            override fun onSuccess(asyncActionToken: IMqttToken) {
-                Log.i(TAG, "Disconnected from broker")
-            }
-
-            override fun onFailure(asyncActionToken: IMqttToken, exception:Throwable) {}
-        })
-    }
     private fun connectToMqttBroker() {
         if (!isConnected)
         {

@@ -1806,7 +1806,6 @@ id add
 id alertTitle
 id aligned
 id all
-id allRights
 id always
 id animateToEnd
 id animateToStart
@@ -1824,13 +1823,14 @@ id blocking
 id bottom
 id bounce
 id bt_submit
-id button
 id button2
 id button3
+id button4
+id button5
+id button7
 id buttonPanel
 id cache_measures
 id cancel_button
-id cardView
 id center
 id center_horizontal
 id center_vertical
@@ -1851,7 +1851,6 @@ id clip_vertical
 id clockwise
 id collapseActionView
 id confirm_button
-id constraint_layout
 id container
 id content
 id contentPanel
@@ -1913,7 +1912,6 @@ id flip
 id floating
 id forever
 id forward
-id getReady
 id ghost_view
 id ghost_view_holder
 id gone
@@ -1936,7 +1934,6 @@ id ignoreRequest
 id image
 id imageButton
 id imageView
-id imageView2
 id imageView4
 id info
 id invisible
@@ -2036,7 +2033,6 @@ id percent
 id pin
 id position
 id postLayout
-id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -2073,7 +2069,6 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
-id shadowSmartcar
 id shortcut
 id showCustom
 id showHome
@@ -2225,6 +2220,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_option_page
 layout activity_voice_command
 layout controllerpage
 layout custom_dialog
@@ -2243,7 +2239,6 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout get_ready
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2292,7 +2287,6 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
-layout progress_button
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

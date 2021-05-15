@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = new Intent(this, VoiceCommand.class);
+        Intent intent = new Intent(this, OptionPage.class);
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
         btSubmit = findViewById(R.id.bt_submit);
