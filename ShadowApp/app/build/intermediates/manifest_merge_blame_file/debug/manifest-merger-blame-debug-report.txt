@@ -6,95 +6,94 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml
+8-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml
+9-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.WAKE_LOCK" />
-11-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:6:5-68
-11-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:6:22-65
+11-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:6:5-68
+11-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:6:22-65
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:7:5-79
-12-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:7:22-76
+12-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:7:5-79
+12-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:7:22-76
 13    <uses-permission android:name="android.permission.INTERNET" />
-13-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:8:5-67
-13-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:8:22-64
+13-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:8:5-67
+13-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:8:22-64
 14    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-14-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:9:5-75
-14-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:9:22-72
+14-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:9:5-75
+14-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:9:22-72
 15    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-15-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:10:5-71
-15-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:10:22-68
+15-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:10:5-71
+15-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:10:22-68
 16
 17    <application
-17-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:12:5-46:19
+17-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:12:5-46:19
 18        android:allowBackup="true"
-18-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:13:9-35
+18-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:13:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.3.2] C:\Users\malik\.gradle\caches\transforms-2\files-2.1\0e4b20e0b5a803bf1b9fa072c81c11da\core-1.3.2\AndroidManifest.xml:24:18-86
+19-->[androidx.core:core:1.3.2] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\0e4b20e0b5a803bf1b9fa072c81c11da\core-1.3.2\AndroidManifest.xml:24:18-86
 20        android:debuggable="true"
 21        android:icon="@mipmap/ic_launcher"
-21-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:14:9-43
+21-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:14:9-43
 22        android:label="@string/app_name"
-22-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:15:9-41
+22-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:15:9-41
 23        android:roundIcon="@mipmap/ic_launcher_round"
-23-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:16:9-54
+23-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:16:9-54
 24        android:supportsRtl="true"
-24-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:17:9-35
-25        android:testOnly="true"
-26        android:theme="@style/Theme.ShadowApp" >
-26-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:18:9-47
-27        <activity android:name="com.example.shadowapp.OptionPage" />
-27-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:19:9-57
-27-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:19:19-45
-28        <activity
-28-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:20:9-22:60
-29            android:name="com.example.shadowapp.VoiceCommand"
-29-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:21:13-41
-30            android:parentActivityName="com.example.shadowapp.ControllerPage" />
-30-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:22:13-57
-31        <activity android:name="com.example.shadowapp.MainActivity" >
-31-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:23:9-29:20
-31-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:23:19-47
-32            <intent-filter>
-32-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:24:13-28:29
-33                <action android:name="android.intent.action.MAIN" />
-33-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:25:17-69
-33-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:25:25-66
-34
-35                <category android:name="android.intent.category.LAUNCHER" />
-35-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:27:17-77
-35-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:27:27-74
-36            </intent-filter>
-37        </activity>
-38        <activity android:name="com.example.shadowapp.ControllerPage" />
-38-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:30:9-32:45
-38-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:31:13-43
-39        <activity android:name="com.example.shadowapp.GetReady" >
-39-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:33:9-39:20
-39-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:33:19-43
-40            <intent-filter>
-40-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:24:13-28:29
-41                <action android:name="android.intent.action.MAIN" />
-41-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:25:17-69
-41-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:25:25-66
-42
-43                <category android:name="android.intent.category.LAUNCHER" />
-43-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:27:17-77
-43-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:27:27-74
-44            </intent-filter>
-45        </activity>
-46
-47        <service android:name="org.eclipse.paho.android.service.MqttService" />
-47-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:41:9-80
-47-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:41:18-77
-48
-49        <meta-data
-49-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:43:9-45:57
-50            android:name="preloaded_fonts"
-50-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:44:13-43
-51            android:resource="@array/preloaded_fonts" />
-51-->C:\Users\malik\OneDrive\Documents\GitHub\group-15\ShadowApp\app\src\main\AndroidManifest.xml:45:13-54
-52    </application>
-53
-54</manifest>
+24-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:17:9-35
+25        android:theme="@style/Theme.ShadowApp" >
+25-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:18:9-47
+26        <activity android:name="com.example.shadowapp.OptionPage" />
+26-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:19:9-57
+26-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:19:19-45
+27        <activity
+27-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:20:9-22:60
+28            android:name="com.example.shadowapp.VoiceCommand"
+28-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:21:13-41
+29            android:parentActivityName="com.example.shadowapp.ControllerPage" />
+29-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:22:13-57
+30        <activity android:name="com.example.shadowapp.MainActivity" >
+30-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:23:9-29:20
+30-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:23:19-47
+31            <intent-filter>
+31-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:24:13-28:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:25:17-69
+32-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:25:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:27:17-77
+34-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:27:27-74
+35            </intent-filter>
+36        </activity>
+37        <activity android:name="com.example.shadowapp.ControllerPage" />
+37-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:30:9-32:45
+37-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:31:13-43
+38        <activity android:name="com.example.shadowapp.GetReady" >
+38-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:33:9-39:20
+38-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:33:19-43
+39            <intent-filter>
+39-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:24:13-28:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:25:17-69
+40-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:25:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:27:17-77
+42-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:27:27-74
+43            </intent-filter>
+44        </activity>
+45
+46        <service android:name="org.eclipse.paho.android.service.MqttService" />
+46-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:41:9-80
+46-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:41:18-77
+47
+48        <meta-data
+48-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:43:9-45:57
+49            android:name="preloaded_fonts"
+49-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:44:13-43
+50            android:resource="@array/preloaded_fonts" />
+50-->D:\GitLab\ShadowApp\app\src\main\AndroidManifest.xml:45:13-54
+51    </application>
+52
+53</manifest>

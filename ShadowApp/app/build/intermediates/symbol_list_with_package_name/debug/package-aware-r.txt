@@ -1574,6 +1574,8 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+drawable _08_2081665_voice_mic_circle_hd_png_download
+drawable _3bfb4dff8f3bc05e549eaba2349e797
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -1672,6 +1674,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable car_steering_wheel_png_2_transparent_images_free
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1712,6 +1715,7 @@ drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable newz
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1734,6 +1738,8 @@ drawable strokeimage
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable unnamed
+drawable unnamedas
 font aldrich
 id ALT
 id BOTTOM_END
@@ -1827,6 +1833,7 @@ id button2
 id button3
 id button4
 id button5
+id button6
 id button7
 id buttonPanel
 id cache_measures
@@ -2122,6 +2129,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView2
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
