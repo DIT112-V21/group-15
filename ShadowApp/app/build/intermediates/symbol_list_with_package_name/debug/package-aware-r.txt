@@ -1680,6 +1680,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable gradient
 drawable gradientbuttons
+drawable ic_action_name1
 drawable ic_baseline_lock_24
 drawable ic_check
 drawable ic_clock_black_24dp
@@ -1824,6 +1825,7 @@ id bottom
 id bounce
 id bt_submit
 id button
+id button2
 id button3
 id buttonPanel
 id cache_measures
@@ -1932,6 +1934,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageButton
 id imageView
 id imageView2
 id imageView4
@@ -2123,6 +2126,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2221,6 +2225,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_voice_command
 layout controllerpage
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -2381,6 +2386,7 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
+string mic
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
@@ -2437,6 +2443,7 @@ string stopbutton
 string todo
 string upArrow
 string username
+string voice_commands
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

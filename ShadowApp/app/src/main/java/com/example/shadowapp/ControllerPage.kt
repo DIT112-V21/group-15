@@ -9,9 +9,12 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.controllerpage.*
+import kotlinx.android.synthetic.main.get_ready.*
 import org.eclipse.paho.client.mqttv3.*
+import java.util.*
 
-class ControllerPage: AppCompatActivity() {
+class ControllerPage(intent: Intent) : AppCompatActivity() {
     private val TAG = "ShadowApp"
     private val EXTERNAL_MQTT_BROKER = "aerostun.dev"
     private val MQTT_SERVER = "tcp://$EXTERNAL_MQTT_BROKER:1883"
@@ -27,14 +30,21 @@ class ControllerPage: AppCompatActivity() {
     private var mMqttClient: MqttClient? = null
     private var isConnected = false
     private var mCameraView: ImageView? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.controllerpage)
         mMqttClient = MqttClient(applicationContext, MQTT_SERVER, TAG)
         mCameraView = findViewById(R.id.imageView)
         connectToMqttBroker()
+        button2.setOnClickListener {
+            val intent = Intent(this, VoiceCommand::class.java)
+            startActivity(intent)
+
+        }
+
     }
+
+
 
     fun returnHome (view: View) {
         val obj = ProgressButton(this@ControllerPage, view)
@@ -44,19 +54,19 @@ class ControllerPage: AppCompatActivity() {
         obj.ButtonFinished()
     }
 
-    fun forward(view: View) {
+    fun forward() {
         drive(MOVEMENT_SPEED, STRAIGHT_ANGLE, "Forward!")
     }
-    fun left(view:View) {
+    fun left() {
         drive(MOVEMENT_SPEED, -STEERING_ANGLE, "Lefty!")
     }
-    fun stop(view:View) {
+    fun stop() {
         drive(IDLE_SPEED, STRAIGHT_ANGLE, "Stopped :(")
     }
-    fun right(view:View) {
+    fun right() {
         drive(MOVEMENT_SPEED, STEERING_ANGLE, "Righty!")
     }
-    fun reverse(view:View) {
+    fun reverse() {
         drive(-MOVEMENT_SPEED, STRAIGHT_ANGLE, "Reverse")
     }
     override fun onResume() {
@@ -138,5 +148,12 @@ class ControllerPage: AppCompatActivity() {
         mMqttClient?.publish(THROTTLE_CONTROL, throttleSpeed.toString(), QOS, null)
         mMqttClient?.publish(STEERING_CONTROL, steeringAngle.toString(), QOS, null)
     }
-}
+
+
+
+
+
+
+    }
+
 

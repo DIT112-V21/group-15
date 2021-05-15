@@ -27,4 +27,7 @@
     <string name="stopbutton">◼</string>
     <string name="smart_car">\@string/SMART CAR</string>
     <string name="smart_car1">SMART CAR</string>
+    <string name="voice_commands">Voice Commands</string>
+    <string name="mic">Mic</string>
+
 </resources>
