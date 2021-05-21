@@ -1,4 +1,4 @@
-#Sun May 16 00:11:15 CEST 2021
-base.0=D\:\\GitLab\\ShadowApp\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
+#Fri May 21 13:48:18 CEST 2021
+base.0=/Users/louismercier/StudioProjects/group-15/ShadowApp/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
+path.0=classes.dex

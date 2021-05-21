@@ -27,6 +27,7 @@
         <activity
             android:name="com.example.shadowapp.VoiceCommand"
             android:parentActivityName="com.example.shadowapp.ControllerPage" />
+        <activity android:name="com.example.shadowapp.JoystickPage" />
         <activity android:name="com.example.shadowapp.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
