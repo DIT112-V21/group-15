@@ -20,6 +20,8 @@
         <activity
             android:name=".VoiceCommand"
             android:parentActivityName=".ControllerPage" />
+        <activity
+            android:name=".JoystickPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
