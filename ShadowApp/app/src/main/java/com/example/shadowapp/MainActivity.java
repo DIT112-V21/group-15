@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Intent intent = new Intent(this, OptionPage.class);
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);

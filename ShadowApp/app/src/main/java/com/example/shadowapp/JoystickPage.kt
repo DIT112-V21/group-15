@@ -7,19 +7,27 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.controllerpage.*
+import io.github.controlwear.virtual.joystick.android.JoystickView
+import kotlinx.android.synthetic.main.joystick_view.*
 import org.eclipse.paho.client.mqttv3.*
-import java.util.*
 
-class ControllerPage : AppCompatActivity() {
+
+class JoystickPage : AppCompatActivity() {
+    // joystick taken from: https://github.com/controlwear/virtual-joystick-android
+
     private val TAG = "ShadowApp"
     private val EXTERNAL_MQTT_BROKER = "aerostun.dev"
     private val MQTT_SERVER = "tcp://$EXTERNAL_MQTT_BROKER:1883"
     private val THROTTLE_CONTROL = "/smartcar/control/throttle"
     private val STEERING_CONTROL = "/smartcar/control/steering"
+    private val SPEED_TOPIC = "/smartcar/control/speed"
+    private val TURNING_TOPIC = "/smartcar/control/turning"
+    private val LIMITER = -1000
     private val MOVEMENT_SPEED = 70
+    private val REVERSE_CAR_MOVEMENT = -1
     private val IDLE_SPEED = 0
     private val STRAIGHT_ANGLE = 0
     private val STEERING_ANGLE = 50
@@ -30,41 +38,103 @@ class ControllerPage : AppCompatActivity() {
     private var isConnected = false
     private var mCameraView: ImageView? = null
 
+
+    private var mTextViewAngleLeft: TextView? = null //joystick
+    private var mTextViewStrengthLeft: TextView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.controllerpage)
+        setContentView(R.layout.joystick_view)
         mMqttClient = MqttClient(applicationContext, MQTT_SERVER, TAG)
         mCameraView = findViewById(R.id.imageView)
 
+        mTextViewAngleLeft = findViewById<View>(R.id.textView_angle_left) as TextView //joystick
+        mTextViewStrengthLeft =
+            findViewById<View>(R.id.textView_strength_left) as TextView //joystick
+
         connectToMqttBroker()
-        button2.setOnClickListener {
-            val intent = Intent(this, VoiceCommand::class.java)
-            startActivity(intent)
+
+        val joystick = findViewById<View>(R.id.joystickView_left) as JoystickView //joystick
+        joystick.setOnMoveListener { angle, strength ->
+            mTextViewAngleLeft!!.text = "$angle°"
+            mTextViewStrengthLeft!!.text = "$strength%"
+            var previousAngle: Int = LIMITER
+            var previousSpeed: Int = LIMITER
+
+            fun onMove(angle: Int, strength: Int) {
+                val adjustedAngle = angleChange(angle)
+                val adjustedSpeed = speedChange(strength, angle)
+                turnCar(adjustedSpeed, adjustedAngle, previousAngle, previousSpeed)
+            }
         }
+    }
 
-       forward.setOnClickListener({forward()})
-       reverse.setOnClickListener({reverse()})
-       right.setOnClickListener({right()})
-       left.setOnClickListener({left()})
-       stop.setOnClickListener({stop()})
+    private fun angleChange(angle: Int): Int {
+        val adjustedAngle: Int
+        adjustedAngle = if (angle >= 90 && angle <= 180) { // left
+            90 - angle
+        } else if (angle < 90 && angle >= 0) { // right
+            90 - angle
+        } else if (angle > 0 && angle >= 270) { // back right
+            angle - 270
+        } else { // back left
+            angle - 270
+        }
+        return adjustedAngle
+    }
 
+    private fun speedChange(strength: Int, angle: Int): Int {
+        val adjustedSpeed: Double
+        if (angle <= 180) {
+            adjustedSpeed = strength * 0.6
+        } else {
+            adjustedSpeed = strength * 0.6 * REVERSE_CAR_MOVEMENT
+        }
+        return adjustedSpeed.toInt()
+    }
+
+    private fun turnCar(
+        adjustedSpeed: Int,
+        adjustedAngle: Int,
+        previousAngle: Int,
+        previousSpeed: Int
+    ) {
+        var adjustedAngle = adjustedAngle
+        if (adjustedAngle != previousAngle || adjustedSpeed != previousSpeed) {
+            if (adjustedSpeed == 0) adjustedAngle = 0
+            mMqttClient?.publish(TURNING_TOPIC, Integer.toString(adjustedAngle), QOS, null)
+            mMqttClient?.publish(SPEED_TOPIC, Integer.toString(adjustedSpeed), QOS, null)
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        val intent = Intent(this@JoystickPage, MainActivity::class.java) //possible issue here
+        intent.putExtra("Restrict back", true)
+        startActivity(intent)
     }
 
     fun forward() {
         drive(MOVEMENT_SPEED, STRAIGHT_ANGLE, "Forward!")
     }
+
     fun left() {
         drive(MOVEMENT_SPEED, -STEERING_ANGLE, "Lefty!")
     }
+
     fun stop() {
         drive(IDLE_SPEED, STRAIGHT_ANGLE, "Stopped :(")
     }
+
     fun right() {
         drive(MOVEMENT_SPEED, STEERING_ANGLE, "Righty!")
     }
+
     fun reverse() {
         drive(-MOVEMENT_SPEED, STRAIGHT_ANGLE, "Reverse")
     }
+
     override fun onResume() {
 
         super.onResume()
@@ -72,25 +142,25 @@ class ControllerPage : AppCompatActivity() {
     }
 
     private fun connectToMqttBroker() {
-        if (!isConnected)
-        {
-            mMqttClient?.connect(TAG, "", object: IMqttActionListener {
+        if (!isConnected) {
+            mMqttClient?.connect(TAG, "", object : IMqttActionListener {
                 override fun onSuccess(asyncActionToken: IMqttToken) {
                     isConnected = true
                     val successfulConnection = "Connected to MQTT broker"
                     Log.i(TAG, successfulConnection)
-                    Toast.makeText(applicationContext, successfulConnection, Toast.LENGTH_SHORT)?.show()
+                    Toast.makeText(applicationContext, successfulConnection, Toast.LENGTH_SHORT)
+                        ?.show()
                     mMqttClient?.subscribe("/smartcar/ultrasound/front", QOS, null)
                     mMqttClient?.subscribe("/smartcar/camera", QOS, null)
                 }
 
-                override fun onFailure(asyncActionToken: IMqttToken, exception:Throwable) {
+                override fun onFailure(asyncActionToken: IMqttToken, exception: Throwable) {
                     val failedConnection = "Failed to connect to MQTT broker"
                     Log.e(TAG, failedConnection)
                     Toast.makeText(applicationContext, failedConnection, Toast.LENGTH_SHORT)?.show()
                 }
-            }, object: MqttCallback {
-                override fun connectionLost(cause:Throwable) {
+            }, object : MqttCallback {
+                override fun connectionLost(cause: Throwable) {
                     isConnected = false
                     val connectionLost = "Connection to MQTT broker lost"
                     Log.w(TAG, connectionLost)
@@ -98,9 +168,13 @@ class ControllerPage : AppCompatActivity() {
                 }
 
                 @Throws(Exception::class)
-                override fun messageArrived(topic:String, message: MqttMessage) {
+                override fun messageArrived(topic: String, message: MqttMessage) {
                     if (topic == "/smartcar/camera") {
-                        val bm = Bitmap.createBitmap(IMAGE_WIDTH, IMAGE_HEIGHT, Bitmap.Config.ARGB_8888)
+                        val bm = Bitmap.createBitmap(
+                            IMAGE_WIDTH,
+                            IMAGE_HEIGHT,
+                            Bitmap.Config.ARGB_8888
+                        )
                         val payload = message.payload
                         val colors = IntArray(IMAGE_WIDTH * IMAGE_HEIGHT)
                         for (ci in colors.indices) {
@@ -122,9 +196,9 @@ class ControllerPage : AppCompatActivity() {
             })
         }
     }
-    private fun drive(throttleSpeed:Int?, steeringAngle:Int?, actionDescription:String) {
-        if (!isConnected)
-        {
+
+    private fun drive(throttleSpeed: Int?, steeringAngle: Int?, actionDescription: String) {
+        if (!isConnected) {
             val notConnected = "Not connected (yet)"
             Log.e(TAG, notConnected)
             Toast.makeText(applicationContext, notConnected, Toast.LENGTH_SHORT).show()
@@ -135,11 +209,4 @@ class ControllerPage : AppCompatActivity() {
         mMqttClient?.publish(STEERING_CONTROL, steeringAngle.toString(), QOS, null)
     }
 
-
-
-
-
-
-    }
-
-
+}

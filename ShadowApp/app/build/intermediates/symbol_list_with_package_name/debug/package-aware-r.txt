@@ -85,6 +85,19 @@ array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
 array preloaded_fonts
+attr JV_autoReCenterButton
+attr JV_backgroundColor
+attr JV_backgroundSizeRatio
+attr JV_borderAlpha
+attr JV_borderColor
+attr JV_borderWidth
+attr JV_buttonColor
+attr JV_buttonDirection
+attr JV_buttonImage
+attr JV_buttonSizeRatio
+attr JV_buttonStickToBorder
+attr JV_enabled
+attr JV_fixedCenter
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1692,6 +1705,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_person
+drawable joystick_background
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1734,6 +1748,7 @@ drawable strokeimage
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable white_ball
 font aldrich
 id ALT
 id BOTTOM_END
@@ -1820,6 +1835,7 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id blocking
+id both
 id bottom
 id bounce
 id bt_submit
@@ -1926,6 +1942,7 @@ id hideable
 id home
 id homeAsUp
 id honorRequest
+id horizontal
 id icon
 id icon_group
 id ifRoom
@@ -1940,6 +1957,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id joystickView_left
 id jumpToEnd
 id jumpToStart
 id labelGroup
@@ -2122,6 +2140,8 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView_angle_left
+id textView_strength_left
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2152,6 +2172,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id vertical
 id view_offset_helper
 id visible
 id withText
@@ -2239,6 +2260,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout joystick_view
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -3208,6 +3230,7 @@ styleable GradientColor android_startColor android_endColor android_type android
 styleable GradientColorItem android_color android_offset
 styleable ImageFilterView altSrc brightness contrast crossfade overlay round roundPercent saturation warmth
 styleable Insets paddingBottomSystemWindowInsets paddingLeftSystemWindowInsets paddingRightSystemWindowInsets
+styleable JoystickView JV_autoReCenterButton JV_backgroundColor JV_backgroundSizeRatio JV_borderAlpha JV_borderColor JV_borderWidth JV_buttonColor JV_buttonDirection JV_buttonImage JV_buttonSizeRatio JV_buttonStickToBorder JV_enabled JV_fixedCenter
 styleable KeyAttribute android_alpha android_transformPivotX android_transformPivotY android_translationX android_translationY android_scaleX android_scaleY android_rotation android_rotationX android_rotationY android_translationZ android_elevation curveFit framePosition motionProgress motionTarget transitionEasing transitionPathRotate
 styleable KeyCycle android_alpha android_translationX android_translationY android_scaleX android_scaleY android_rotation android_rotationX android_rotationY android_translationZ android_elevation curveFit framePosition motionProgress motionTarget transitionEasing transitionPathRotate waveOffset wavePeriod waveShape waveVariesBy
 styleable KeyFrame

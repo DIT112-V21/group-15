@@ -16,6 +16,8 @@ public class OptionPage extends AppCompatActivity {
 
         Button controllerB  = (Button) findViewById(R.id.button4);
         Button voiceCommand = (Button) findViewById(R.id.button5);
+        Button joystick = (Button) findViewById(R.id.button7);
+
         controllerB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,6 +31,13 @@ public class OptionPage extends AppCompatActivity {
                 openActivity3();
             }
         });
+
+        joystick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity4();
+            }
+        });
     }
     public void openActivity2 () {
         Intent intent = new Intent(this, ControllerPage.class);
@@ -36,6 +45,10 @@ public class OptionPage extends AppCompatActivity {
     }
     public void openActivity3 () {
         Intent intent = new Intent(this, VoiceCommand.class);
+        startActivity(intent);
+    }
+    public void openActivity4 () {
+        Intent intent = new Intent(this, JoystickPage.class);
         startActivity(intent);
     }
 }
