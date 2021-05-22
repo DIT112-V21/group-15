@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">ShadowApp</string>
+    <string name="start">START</string>
+    <string name="getready">Get Ready!</string>
+    <string name="all_rights_reserved_2021">All rights reserved© 2021</string>
+    <string name="shadow_smartcar">SHADOW SMARTCAR©</string>
+    <string name="forward">FORWARD</string>
+    <string name="left">LEFT</string>
+    <string name="right">RIGHT</string>
+    <string name="backward">BACKWARD</string>
+    <string name="todo">TODO</string>
+    <string name="goHome">🏠</string>
+    <string name="home">🏠</string>
+    <string name="rightArrow">⮕</string>
+    <string name="upArrow">▲</string>
+    <string name="rightArrows">►</string>
+    <string name="leftArrow">◄</string>
+    <string name="downArrow">▼</string>
+    <string name="caroverlook">Caroverlook</string>
+    <string name="follow_car">FOLLOW CAR</string>
+    <string name="button">Button</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="profile">profile</string>
+    <string name="username">Username</string>
+    <string name="locker">locker</string>
+    <string name="stopbutton">◼</string>
+    <string name="smart_car">\@string/SMART CAR</string>
+    <string name="smart_car1">SMART CAR</string>
+    <string name="voice_commands">Voice Commands</string>
+    <string name="mic">Mic</string>
+
+</resources>

@@ -1,0 +1,10 @@
+com/example/shadowapp/OptionPage.java
+ com.example.shadowapp.OptionPage
+ com.example.shadowapp.OptionPage$1
+ com.example.shadowapp.OptionPage$2
+ com.example.shadowapp.OptionPage$3
+ com.example.shadowapp.OptionPage$4
+com/example/shadowapp/MainActivity.java
+ com.example.shadowapp.MainActivity
+com/example/shadowapp/BuildConfig.java
+ com.example.shadowapp.BuildConfig
