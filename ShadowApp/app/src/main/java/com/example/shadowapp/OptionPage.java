@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class OptionPage extends AppCompatActivity {
+public class OptionPage extends ConnectionMovement {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

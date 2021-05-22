@@ -20,8 +20,10 @@ while [ -h "$PRG" ] ; do
     fi
 done
 SAVED="`pwd`"
+# shellcheck disable=SC2164
 cd "`dirname \"$PRG\"`/" >/dev/null
 APP_HOME="`pwd -P`"
+# shellcheck disable=SC2164
 cd "$SAVED" >/dev/null
 
 APP_NAME="Gradle"
@@ -134,8 +136,11 @@ if $cygwin ; then
         CHECK2=`echo "$arg"|egrep -c "^-"`                                 ### Determine if an option
 
         if [ $CHECK -ne 0 ] && [ $CHECK2 -eq 0 ] ; then                    ### Added a condition
+            # shellcheck disable=SC2046
+            # shellcheck disable=SC2006
             eval `echo args$i`=`cygpath --path --ignore --mixed "$arg"`
         else
+            # shellcheck disable=SC2046
             eval `echo args$i`="\"$arg\""
         fi
         i=$((i+1))
@@ -166,6 +171,7 @@ eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$A
 
 # by default we should be in the correct project dir, but when run from Finder on Mac, the cwd is wrong
 if [ "$(uname)" = "Darwin" ] && [ "$HOME" = "$PWD" ]; then
+  # shellcheck disable=SC2164
   cd "$(dirname "$0")"
 fi
 
