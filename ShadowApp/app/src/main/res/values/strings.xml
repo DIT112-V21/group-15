@@ -8,7 +8,6 @@
     <string name="left">LEFT</string>
     <string name="right">RIGHT</string>
     <string name="backward">BACKWARD</string>
-    <string name="todo">TODO</string>
     <string name="goHome">🏠</string>
     <string name="home">🏠</string>
     <string name="rightArrow">⮕</string>
@@ -19,7 +18,6 @@
     <string name="caroverlook">Caroverlook</string>
     <string name="follow_car">FOLLOW CAR</string>
     <string name="button">Button</string>
-    <string name="password">Password</string>
     <string name="sign_in">Sign in</string>
     <string name="profile">profile</string>
     <string name="username">Username</string>
@@ -29,5 +27,22 @@
     <string name="smart_car1">SMART CAR</string>
     <string name="voice_commands">Voice Commands</string>
     <string name="mic">Mic</string>
+    <string name="get_in">get in</string>
+    <string name="login_email_address">Email Address</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="name">Name</string>
+    <string name="login_email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="already_registered_login_here">Already Registered ? Login Here</string>
+    <string name="todo">TODO</string>
+    <string name="loginpassword">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="email">Email</string>
+    <string name="login_into_your_account">Login Into Your Account</string>
+    <string name="login">Login</string>
+    <string name="create_an_account">Create An Account</string>
+
 
 </resources>
