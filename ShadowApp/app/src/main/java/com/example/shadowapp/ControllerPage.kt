@@ -6,12 +6,12 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.controllerpage.*
 import org.eclipse.paho.client.mqttv3.*
-import java.util.*
 
 class ControllerPage : AppCompatActivity() {
     private val TAG = "ShadowApp"
@@ -29,24 +29,28 @@ class ControllerPage : AppCompatActivity() {
     private var mMqttClient: MqttClient? = null
     private var isConnected = false
     private var mCameraView: ImageView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.controllerpage)
         mMqttClient = MqttClient(applicationContext, MQTT_SERVER, TAG)
         mCameraView = findViewById(R.id.imageView)
         connectToMqttBroker()
-        button2.setOnClickListener {
-            val intent = Intent(this, VoiceCommand::class.java)
-            startActivity(intent)
 
-        }
+        val home = findViewById<View>(R.id.button3) as Button
+        home.setOnClickListener(View.OnClickListener { returnPage() })
 
-       forward.setOnClickListener({forward()})
-       reverse.setOnClickListener({reverse()})
-       right.setOnClickListener({right()})
-       left.setOnClickListener({left()})
-       stop.setOnClickListener({stop()})
+        forward.setOnClickListener({forward()})
+        reverse.setOnClickListener({reverse()})
+        right.setOnClickListener({right()})
+        left.setOnClickListener({left()})
+        stop.setOnClickListener({stop()})
 
+    }
+
+    fun returnPage() {
+        val intent = Intent(this, OptionPage::class.java)
+        startActivity(intent)
     }
 
     fun forward() {
@@ -133,9 +137,6 @@ class ControllerPage : AppCompatActivity() {
         mMqttClient?.publish(THROTTLE_CONTROL, throttleSpeed.toString(), QOS, null)
         mMqttClient?.publish(STEERING_CONTROL, steeringAngle.toString(), QOS, null)
     }
-
-
-
 
 
 

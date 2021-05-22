@@ -1,4 +1,4 @@
-package com.example.shadowapp
+/*package com.example.shadowapp
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -209,4 +209,4 @@ class JoystickPage : AppCompatActivity() {
         mMqttClient?.publish(STEERING_CONTROL, steeringAngle.toString(), QOS, null)
     }
 
-}
+}*/
