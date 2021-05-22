@@ -67,10 +67,8 @@ public class LoginPage extends AppCompatActivity {
                       if(task.isSuccessful()){
                           Toast.makeText(LoginPage.this,"Logged in Successfully ", Toast.LENGTH_SHORT).show();
                           startActivity(new Intent(getApplicationContext(),OptionPage.class));
-                      }else {
-                          Toast.makeText(LoginPage.this,"Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
-                      }
+                      }else
+                          Toast.makeText(LoginPage.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }

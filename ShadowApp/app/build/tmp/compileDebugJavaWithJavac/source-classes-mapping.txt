@@ -1,5 +1,8 @@
-com/example/shadowapp/BuildConfig.java
- com.example.shadowapp.BuildConfig
+com/example/shadowapp/RegisterPage.java
+ com.example.shadowapp.RegisterPage
+ com.example.shadowapp.RegisterPage$1
+ com.example.shadowapp.RegisterPage$1$1
+ com.example.shadowapp.RegisterPage$2
 com/example/shadowapp/MainActivity.java
  com.example.shadowapp.MainActivity
  com.example.shadowapp.MainActivity$1
@@ -8,11 +11,8 @@ com/example/shadowapp/OptionPage.java
  com.example.shadowapp.OptionPage$1
  com.example.shadowapp.OptionPage$2
  com.example.shadowapp.OptionPage$3
-com/example/shadowapp/RegisterPage.java
- com.example.shadowapp.RegisterPage
- com.example.shadowapp.RegisterPage$1
- com.example.shadowapp.RegisterPage$1$1
- com.example.shadowapp.RegisterPage$2
+com/example/shadowapp/BuildConfig.java
+ com.example.shadowapp.BuildConfig
 com/example/shadowapp/LoginPage.java
  com.example.shadowapp.LoginPage
  com.example.shadowapp.LoginPage$1

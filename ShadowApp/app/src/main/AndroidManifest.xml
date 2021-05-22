@@ -16,7 +16,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShadowApp">
-        <activity android:name=".JoystickPage"></activity>
         <activity android:name=".RegisterPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,13 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginPage" />
         <activity android:name=".OptionPage" />
         <activity
             android:name=".VoiceCommand"
             android:parentActivityName=".ControllerPage" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".ControllerPage"
             tools:ignore="Instantiatable" />
