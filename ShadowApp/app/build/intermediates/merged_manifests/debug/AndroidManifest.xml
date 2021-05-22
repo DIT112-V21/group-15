@@ -23,7 +23,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShadowApp" >
-        <activity android:name="com.example.shadowapp.LoginPage" />
         <activity android:name="com.example.shadowapp.RegisterPage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,12 +30,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.shadowapp.LoginPage" />
         <activity android:name="com.example.shadowapp.OptionPage" />
         <activity
             android:name="com.example.shadowapp.VoiceCommand"
             android:parentActivityName="com.example.shadowapp.ControllerPage" />
-        <activity android:name="com.example.shadowapp.MainActivity" >
-        </activity>
+        <activity android:name="com.example.shadowapp.MainActivity" />
         <activity android:name="com.example.shadowapp.ControllerPage" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />

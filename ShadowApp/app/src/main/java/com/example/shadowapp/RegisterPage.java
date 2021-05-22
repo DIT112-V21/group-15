@@ -71,7 +71,7 @@ public class RegisterPage extends AppCompatActivity {
                     public void onComplete(@NotNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(RegisterPage.this,"User Created. ", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), JoystickPage.class));
+                            startActivity(new Intent(getApplicationContext(), LoginPage.class));
                         }else {
                             Toast.makeText(RegisterPage.this,"Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -83,7 +83,7 @@ public class RegisterPage extends AppCompatActivity {
         uLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), JoystickPage.class));
+                startActivity(new Intent(getApplicationContext(), LoginPage.class));
             }
         });
 

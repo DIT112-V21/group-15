@@ -23,7 +23,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShadowApp" >
-        <activity android:name="com.example.shadowapp.LoginPage" />
         <activity android:name="com.example.shadowapp.RegisterPage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
