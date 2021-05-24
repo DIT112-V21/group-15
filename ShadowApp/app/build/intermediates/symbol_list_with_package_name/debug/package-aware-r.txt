@@ -1673,6 +1673,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable car_steering_wheel_png_2_transparent_images_free
+drawable car_with_driver_silhouette_svg
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1770,6 +1771,8 @@ id FUNCTION
 id LoginButton
 id META
 id NO_DEBUG
+id ProfileEmail
+id ProfileName
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1857,6 +1860,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id button10
 id button3
 id button4
 id button5
@@ -2072,6 +2076,7 @@ id percent
 id pin
 id position
 id postLayout
+id profilepage
 id progressBar
 id progressBar2
 id progress_circular
@@ -2170,6 +2175,7 @@ id textStart
 id textTop
 id textView
 id textView2
+id textView3
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2276,6 +2282,7 @@ layout abc_tooltip
 layout activity_login_page
 layout activity_main
 layout activity_option_page
+layout activity_profile_page
 layout activity_register_page
 layout activity_voice_command
 layout browser_actions_context_menu_page
