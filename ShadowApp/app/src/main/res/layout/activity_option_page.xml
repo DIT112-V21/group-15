@@ -32,7 +32,7 @@
         android:layout_width="221dp"
         android:layout_height="109dp"
         android:background="@drawable/ic_action_name1"
-        android:text="voice"
+        android:text="Voice"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
@@ -50,7 +50,7 @@
         android:layout_width="210dp"
         android:layout_height="118dp"
         android:background="@drawable/unnamedas"
-        android:text="joystick"
+        android:text="Joystick"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
@@ -70,8 +70,12 @@
         android:background="@drawable/gradient"
         android:text="@string/goHome"
         app:backgroundTint="@color/black"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="5dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02" />
 
     <TextView
         android:id="@+id/textView2"
@@ -82,7 +86,24 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
+
+    <Button
+        android:id="@+id/profilepage"
+        android:layout_width="63dp"
+        android:layout_height="54dp"
+        android:background="@drawable/car_with_driver_silhouette_svg"
+        android:text="User Profile"
+        android:textSize="5sp"
+        app:backgroundTint="#39A1F4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.019" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
