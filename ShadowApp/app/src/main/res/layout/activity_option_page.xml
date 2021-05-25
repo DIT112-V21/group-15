@@ -9,13 +9,20 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="116dp"
+        android:layout_height="74dp"
+        android:background="@color/white"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/bangers"
         android:text="CarAid"
-        android:textSize="35sp"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_margin="12dp"/>
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -31,6 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="fill"
+            android:background="@color/white"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_row="0"
@@ -72,6 +80,7 @@
             android:layout_gravity="fill"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
+            android:background="@color/white"
             android:layout_row="0"
             android:layout_column="1"
             app:cardCornerRadius="8dp"
@@ -108,6 +117,7 @@
             android:id="@+id/cardJoystick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:layout_gravity="fill"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
@@ -118,25 +128,23 @@
             app:cardUseCompatPadding="true">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="69dp"
+                android:layout_height="90dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_car3"/>
+                    android:layout_width="69dp"
+                    android:layout_height="63dp"
+                    android:src="@drawable/steering" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Joystick"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
-
-
-
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
 
             </LinearLayout>
@@ -148,6 +156,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="fill"
+            android:background="@color/white"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_row="1"

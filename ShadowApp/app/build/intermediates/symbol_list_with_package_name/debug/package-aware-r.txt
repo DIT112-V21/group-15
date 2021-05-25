@@ -29,9 +29,11 @@ anim design_snackbar_in
 anim design_snackbar_out
 anim fade_in
 anim fragment_fast_out_extra_slow_in
+anim logo_anime
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim text_anime
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1069,6 +1071,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1675,7 +1678,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
-drawable car_steering_wheel_png_2_transparent_images_free
+drawable car_aid
 drawable car_with_driver_silhouette_svg
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -1713,7 +1716,6 @@ drawable ic_car3
 drawable ic_check
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
-drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mic3
 drawable ic_mtrl_checked_circle
@@ -1762,6 +1764,7 @@ drawable round_edittext
 drawable shadow_logo
 drawable sk_rmavbild_2021_04_17_kl__12_33_53
 drawable sk_rmavbild_2021_04_19_kl__10_17_25
+drawable steering
 drawable strokeimage
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1770,6 +1773,7 @@ drawable unnamed
 drawable unnamedas
 drawable white_ball
 font aldrich
+font bangers
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1868,6 +1872,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id button10
+id button23
 id button3
 id buttonPanel
 id cache_measures
@@ -1981,6 +1986,7 @@ id ignoreRequest
 id image
 id imageButton
 id imageView
+id imageView2
 id imageView3
 id info
 id invisible
@@ -2180,8 +2186,11 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView10
 id textView2
 id textView3
+id textView6
+id textView9
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2212,6 +2221,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id videoView
 id view_offset_helper
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
@@ -2285,12 +2295,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_login_page
 layout activity_main
 layout activity_option_page
 layout activity_profile_page
 layout activity_register_page
 layout activity_voice_command
+layout avtivity_login_page
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout controllerpage
@@ -2378,8 +2388,13 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+raw car
+raw carr
+raw carrr
+raw carrrr
 raw hornsound
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2416,6 +2431,7 @@ string backward
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
 string button
+string caraid
 string caroverlook
 string character_counter_content_description
 string character_counter_overflowed_content_description
@@ -2471,6 +2487,7 @@ string locker
 string login
 string login_email
 string login_email_address
+string login_into_account
 string login_into_your_account
 string loginpassword
 string material_clock_display_divider

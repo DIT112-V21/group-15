@@ -25,7 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShadowApp" >
         <activity android:name="com.example.shadowapp.ProfilePage" />
-        <activity android:name="com.example.shadowapp.RegisterPage" >
+        <activity android:name="com.example.shadowapp.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,7 +37,7 @@
         <activity
             android:name="com.example.shadowapp.VoiceCommand"
             android:parentActivityName="com.example.shadowapp.ControllerPage" />
-        <activity android:name="com.example.shadowapp.MainActivity" />
+        <activity android:name="com.example.shadowapp.RegisterPage" />
         <activity android:name="com.example.shadowapp.ControllerPage" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />

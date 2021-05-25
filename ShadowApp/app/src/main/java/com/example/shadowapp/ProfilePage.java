@@ -1,20 +1,17 @@
 package com.example.shadowapp;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import java.util.Objects;
 
 public class ProfilePage extends AppCompatActivity {
     TextView fullName,email;
@@ -34,28 +31,30 @@ public class ProfilePage extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
-        userId = fAuth.getCurrentUser().getUid();
+        userId = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
 
-        Button logout  = (Button) findViewById(R.id.button10);
+        Button logout  = findViewById(R.id.button10);
+        Button returnB  =findViewById(R.id.button3);
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity1();
-            }
-        });
+        logout.setOnClickListener(v -> openActivity1());
+        returnB.setOnClickListener(v -> openActivity2());
 
         DocumentReference documentReference = fStore.collection("users").document(userId);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot , @Nullable FirebaseFirestoreException error) {
-                fullName.setText(documentSnapshot.getString("uFullName"));
-                email.setText(documentSnapshot.getString("uEmail"));
-            }
+        documentReference.addSnapshotListener(this, (documentSnapshot, error) -> {
+            assert documentSnapshot != null;
+            fullName.setText(documentSnapshot.getString("uFullName"));
+            email.setText(documentSnapshot.getString("uEmail"));
         });
 
 
     }
+
+    private void openActivity2() {
+        Intent intent = new Intent(this, OptionPage.class);
+        startActivity(intent);
+    }
+
+
     public void openActivity1 () {
         Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);

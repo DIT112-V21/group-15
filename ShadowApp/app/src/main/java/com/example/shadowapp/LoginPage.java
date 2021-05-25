@@ -30,7 +30,7 @@ public class LoginPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
+        setContentView(R.layout.avtivity_login_page);
 
         uEmail       = findViewById(R.id.loginemail);
         uPassword    = findViewById(R.id.loginpassword);

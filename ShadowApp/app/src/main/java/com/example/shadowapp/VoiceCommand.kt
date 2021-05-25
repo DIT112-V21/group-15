@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_voice_command.*
 import java.util.*
@@ -16,13 +18,13 @@ class VoiceCommand : ConnectionMovement() {
         mMqttClient = MqttClient(applicationContext, MQTT_SERVER, TAG)
         mCameraView = findViewById(R.id.imageView)
         connectToMqttBroker()
-        val actionBar = supportActionBar
 
-        actionBar!!.title = "Voice Command"
-        actionBar.setDisplayHomeAsUpEnabled(true)
         imageButton.setOnClickListener{
             speechToText()
         }
+        val returnB = findViewById<Button>(R.id.button23)
+
+        returnB.setOnClickListener(View.OnClickListener { v: View? -> openActivity2() })
     }
     private fun speechToText() {
         if (!SpeechRecognizer.isRecognitionAvailable(this)){
@@ -45,22 +47,32 @@ class VoiceCommand : ConnectionMovement() {
             val vCommand=result[0]
             textView.text = result[0]
 
-            if(vCommand.contains("forward")){
-                forward()
-            } else if (vCommand.contains("turn right")){
-                right()
-            } else if (vCommand.contains("turn left")){
-                left()
-            } else if (vCommand.contains("backward")){
-                reverse()
-            } else if (vCommand.contains("stop")){
-                stop()
-            }else{
-                Toast.makeText(applicationContext,"Invalid Command",Toast.LENGTH_SHORT).show()
+            when {
+                vCommand.contains("forward") -> {
+                    forward()
+                }
+                vCommand.contains("turn right") -> {
+                    right()
+                }
+                vCommand.contains("turn left") -> {
+                    left()
+                }
+                vCommand.contains("backward") -> {
+                    reverse()
+                }
+                vCommand.contains("stop") -> {
+                    stop()
+                }
+                else -> {
+                    Toast.makeText(applicationContext,"Invalid Command",Toast.LENGTH_SHORT).show()
+                }
             }
 
         }
     }
 
-
+    private fun openActivity2() {
+        val intent = Intent(this, OptionPage::class.java)
+        startActivity(intent)
+    }
 }
