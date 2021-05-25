@@ -34,7 +34,7 @@
         android:textSize="38sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,7 +47,7 @@
         android:background="@drawable/bt_command"
         android:fontFamily="@font/aldrich"
         android:text="@string/home"
-        android:textSize="20sp"
+        android:textSize="40sp"
         app:backgroundTint="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

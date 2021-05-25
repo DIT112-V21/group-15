@@ -1,13 +1,16 @@
 package com.example.shadowapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -27,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
-
 
         logoAnime = AnimationUtils.loadAnimation(this,R.anim.logo_anime);
         textAnime = AnimationUtils.loadAnimation(this,R.anim.text_anime);
@@ -52,15 +53,19 @@ public class MainActivity extends AppCompatActivity {
                 mediaPlayer.seekTo(currentP);
                 mediaPlayer.start();
             }
-
         });
-
 
         int WAITING_SCREEN = 6500;
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(MainActivity.this,RegisterPage.class);
+            Intent intent = new Intent(MainActivity.this,LoginPage.class);
             startActivity(intent);
             finish(); }, WAITING_SCREEN);
     }
-
+    public void removeKeyboard(View c) {
+        View view = this.getCurrentFocus();
+        if(view != null) {
+            InputMethodManager close = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            close.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
 }

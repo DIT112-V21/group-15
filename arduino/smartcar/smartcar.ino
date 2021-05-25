@@ -56,7 +56,7 @@ void setup()
   Camera.begin(QVGA, RGB888, 15);
   frameBuffer.resize(Camera.width() * Camera.height() * Camera.bytesPerPixel());
   mqtt.begin("aerostun.dev", 1883, WiFi);
-  // mqtt.begin(WiFi); // Will connect to localhost
+  
 #else
   mqtt.begin(net);
 #endif
