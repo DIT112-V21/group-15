@@ -1679,7 +1679,6 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable car_aid
-drawable car_steering_wheel_png_2_transparent_images_free
 drawable car_with_driver_silhouette_svg
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -1765,6 +1764,7 @@ drawable round_edittext
 drawable shadow_logo
 drawable sk_rmavbild_2021_04_17_kl__12_33_53
 drawable sk_rmavbild_2021_04_19_kl__10_17_25
+drawable steering
 drawable strokeimage
 drawable test_custom_background
 drawable tooltip_frame_dark
