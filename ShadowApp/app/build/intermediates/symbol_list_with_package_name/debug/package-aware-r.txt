@@ -1758,7 +1758,6 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable phbrush
 drawable round_button
 drawable round_edittext
 drawable shadow_logo
@@ -1772,6 +1771,7 @@ drawable tooltip_frame_light
 drawable unnamed
 drawable unnamedas
 drawable white_ball
+drawable whiterounded
 font aldrich
 font bangers
 id ALT
@@ -1988,6 +1988,7 @@ id imageButton
 id imageView
 id imageView2
 id imageView3
+id imageView4
 id info
 id invisible
 id inward
@@ -2139,6 +2140,8 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id soundhelp
+id soundhelper
 id spacer
 id special_effects_controller_view_tag
 id spline
@@ -2396,6 +2399,8 @@ raw carr
 raw carrr
 raw carrrr
 raw hornsound
+raw loginhelper
+raw optionhelper
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2461,6 +2466,7 @@ string create_new_account
 string default_web_client_id
 string downArrow
 string email
+string email2
 string email_address
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -2484,12 +2490,14 @@ string item_view_role_description
 string left
 string leftArrow
 string locker
+string log_out
 string login
 string login_email
 string login_email_address
 string login_into_account
 string login_into_your_account
 string loginpassword
+string logo
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -2542,6 +2550,7 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string name
+string name2
 string password
 string password_toggle_content_description
 string path_password_eye
@@ -2549,7 +2558,9 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string profile
+string profile1
 string project_id
+string question
 string register
 string right
 string rightArrow

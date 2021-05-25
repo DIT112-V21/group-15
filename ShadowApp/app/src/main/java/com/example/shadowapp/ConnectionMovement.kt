@@ -57,6 +57,8 @@ open class ConnectionMovement : AppCompatActivity() {
             connectToMqttBroker()
         }
 
+
+
         fun connectToMqttBroker() {
             if (!isConnected)
             {
@@ -93,7 +95,7 @@ open class ConnectionMovement : AppCompatActivity() {
                                 val r = payload[3 * ci]
                                 val g = payload[3 * ci + 1]
                                 val b = payload[3 * ci + 2]
-                                colors[ci] = Color.rgb(r.toInt(), g.toInt(), b.toInt()) //camera related
+                                colors[ci] = Color.rgb(r.toInt(), g.toInt(), b.toInt())
                             }
                             bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT)
                             mCameraView?.setImageBitmap(bm)
