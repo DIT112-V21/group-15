@@ -220,6 +220,10 @@
         "source": "/Users/jakobbergek/Documents/GitHub/group-15/ShadowApp/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_car3.png"
     },
     {
+        "merged": "/Users/jakobbergek/Documents/GitHub/group-15/ShadowApp/app/build/intermediates/res/merged/debug/drawable_gradientgreenbuttons.xml.flat",
+        "source": "/Users/jakobbergek/Documents/GitHub/group-15/ShadowApp/app/src/main/res/drawable/gradientgreenbuttons.xml"
+    },
+    {
         "merged": "/Users/jakobbergek/Documents/GitHub/group-15/ShadowApp/app/build/intermediates/res/merged/debug/drawable_unnamed.png.flat",
         "source": "/Users/jakobbergek/Documents/GitHub/group-15/ShadowApp/app/src/main/res/drawable/unnamed.png"
     },

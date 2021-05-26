@@ -33,6 +33,7 @@ public class LoginPage extends AppCompatActivity {
     FirebaseAuth fAuth;
     ProgressBar progressBar;
     MainActivity main;
+    MediaPlayer help;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,21 +41,32 @@ public class LoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.avtivity_login_page);
 
-        MediaPlayer help = MediaPlayer.create(this, R.raw.loginhelper);
-        Button pressHelp = (Button) this.findViewById(R.id.soundhelp);
-        pressHelp.setOnClickListener(v -> {
-            if (help.isPlaying()) {
-                help.stop();
-                try {
-                    help.prepare();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                help.start();
-            }
-        });
+        help = MediaPlayer.create(this, R.raw.loginhelper);
+        Button pressHelpStart = (Button) this.findViewById(R.id.soundhelp2);
+        Button pressHelpStop = (Button) this.findViewById(R.id.soundOn);
 
+        pressHelpStart.setOnClickListener(v -> {
+            help.start();
+            pressHelpStart.setVisibility(View.INVISIBLE);
+            pressHelpStop.setVisibility(View.VISIBLE);
+            help.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    pressHelpStop.setVisibility(View.INVISIBLE);
+                    pressHelpStart.setVisibility(View.VISIBLE);
+                }
+            });
+        });
+        pressHelpStop.setOnClickListener(v -> {
+            help.stop();
+            try {
+                help.prepare();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            pressHelpStop.setVisibility(View.INVISIBLE);
+            pressHelpStart.setVisibility(View.VISIBLE);
+        });
 
         uEmail = findViewById(R.id.loginemail);
         uPassword = findViewById(R.id.loginpassword);
@@ -67,6 +79,7 @@ public class LoginPage extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
                 String email = uEmail.getText().toString().trim();
                 String password = uPassword.getText().toString().trim();
 
@@ -90,8 +103,10 @@ public class LoginPage extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            stopMedia();
                             Toast.makeText(LoginPage.this, "Logged in Successfully ", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), OptionPage.class));
+
                         } else
                             Toast.makeText(LoginPage.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
@@ -102,9 +117,17 @@ public class LoginPage extends AppCompatActivity {
         uCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopMedia();
                 startActivity(new Intent(getApplicationContext(), RegisterPage.class));
+
             }
         });
+    }
+    public void stopMedia() {
+        if (help.isPlaying()) {
+            help.stop();
+        }
+
     }
 
 }

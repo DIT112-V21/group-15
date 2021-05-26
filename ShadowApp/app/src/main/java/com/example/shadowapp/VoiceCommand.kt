@@ -18,8 +18,10 @@ class VoiceCommand : ConnectionMovement() {
         mMqttClient = MqttClient(applicationContext, MQTT_SERVER, TAG)
         mCameraView = findViewById(R.id.imageView)
         connectToMqttBroker()
-        speechToText()
 
+        imageButton.setOnClickListener{
+            speechToText()
+        }
         val returnB = findViewById<Button>(R.id.button23)
 
         returnB.setOnClickListener(View.OnClickListener { v: View? -> openActivity2() })

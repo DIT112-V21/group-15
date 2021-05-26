@@ -17,57 +17,86 @@ public class OptionPage extends AppCompatActivity {
     CardView cardMic;
     CardView cardJoystick;
     CardView cardProfile;
+    MediaPlayer help;
 
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option_page);
-        MediaPlayer help = MediaPlayer.create(this, R.raw.optionhelper);
-        Button pressHelp = (Button) this.findViewById(R.id.soundhelper);
-        pressHelp.setOnClickListener(v -> {
-            if (help.isPlaying()) {
-                help.stop();
-                try {
-                    help.prepare();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                help.start();
-            }
-        });
+
+        help = MediaPlayer.create(this, R.raw.optionhelper);
+        Button pressHelpStart = (Button) this.findViewById(R.id.soundhelp2);
+        Button pressHelpStop = (Button) this.findViewById(R.id.soundOn);
 
         cardController = findViewById(R.id.cardController);
         cardMic = findViewById(R.id.cardMic);
         cardJoystick = findViewById(R.id.cardJoystick);
         cardProfile = findViewById(R.id.cardProfile);
 
+        pressHelpStart.setOnClickListener(v -> {
+            help.start();
+            pressHelpStart.setVisibility(View.INVISIBLE);
+            pressHelpStop.setVisibility(View.VISIBLE);
+            help.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    pressHelpStop.setVisibility(View.INVISIBLE);
+                    pressHelpStart.setVisibility(View.VISIBLE);
+                }
+            });
+        });
+        pressHelpStop.setOnClickListener(v -> {
+            help.stop();
+            try {
+                help.prepare();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            pressHelpStop.setVisibility(View.INVISIBLE);
+            pressHelpStart.setVisibility(View.VISIBLE);
+        });
+
         cardController.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  ControllerPage(); }
+            public void onClick(View v) {
+                stopMedia();
+                ControllerPage();}
         });
         cardMic.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  VoiceCommand();}
+            public void onClick(View v) {
+                stopMedia();
+                VoiceCommand();}
+
         });
         cardProfile.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){ ProfilePage(); }
+            public void onClick(View v){
+                stopMedia();
+                ProfilePage();}
         });
 
     }
     public void ControllerPage () {
+
         Intent intent = new Intent(this, ControllerPage.class);
         startActivity(intent);
     }
     public void VoiceCommand () {
+
         Intent intent = new Intent(this, VoiceCommand.class);
         startActivity(intent);
     }
     public void ProfilePage () {
+
         Intent intent = new Intent(this, ProfilePage.class);
         startActivity(intent);
     }
+    public void stopMedia() {
+        if (help.isPlaying()) {
+            help.stop();
+        }
 
+    }
 }
 
 
