@@ -54,18 +54,12 @@ public class MainActivity extends AppCompatActivity {
                 mediaPlayer.start();
             }
         });
-
         int WAITING_SCREEN = 6500;
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(MainActivity.this,LoginPage.class);
             startActivity(intent);
             finish(); }, WAITING_SCREEN);
+
     }
-    public void removeKeyboard(View c) {
-        View view = this.getCurrentFocus();
-        if(view != null) {
-            InputMethodManager close = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            close.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-    }
+
 }
