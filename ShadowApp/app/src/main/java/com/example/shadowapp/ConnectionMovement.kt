@@ -56,6 +56,13 @@ open class ConnectionMovement : AppCompatActivity() {
         fun reverse() {
             drive(-MOVEMENT_SPEED, STRAIGHT_ANGLE, "Reverse")
         }
+
+
+
+
+
+
+
         override fun onResume() {
 
             super.onResume()
@@ -127,4 +134,5 @@ open class ConnectionMovement : AppCompatActivity() {
             mMqttClient?.publish(THROTTLE_CONTROL, throttleSpeed.toString(), QOS, null)
             mMqttClient?.publish(STEERING_CONTROL, steeringAngle.toString(), QOS, null)
         }
+
     }
