@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.eclipse.paho.client.mqttv3.*
 
+
 open class ConnectionMovement : AppCompatActivity() {
 
         val TAG = "ShadowApp"
@@ -30,11 +31,15 @@ open class ConnectionMovement : AppCompatActivity() {
         var mMqttClient: MqttClient? = null
         var isConnected = false
         var mCameraView: ImageView? = null
-        override fun onCreate(savedInstanceState: Bundle?) {
+        var JoystickPage: JoystickPage? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.controllerpage)
             mMqttClient = MqttClient(applicationContext, MQTT_SERVER, TAG)
             mCameraView = findViewById(R.id.imageView)
+
+            this.JoystickPage = JoystickPage()
         }
         fun forward() {
             drive(MOVEMENT_SPEED, STRAIGHT_ANGLE, "Forward!")

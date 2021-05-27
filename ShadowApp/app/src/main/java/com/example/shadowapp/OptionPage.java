@@ -32,6 +32,7 @@ public class OptionPage extends AppCompatActivity {
         cardJoystick = findViewById(R.id.cardJoystick);
         cardProfile = findViewById(R.id.cardProfile);
 
+
         pressHelpStart.setOnClickListener(v -> {
             help.start();
             pressHelpStart.setVisibility(View.INVISIBLE);
@@ -74,6 +75,12 @@ public class OptionPage extends AppCompatActivity {
                 stopMedia();
                 ProfilePage();}
         });
+        cardJoystick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                joystick();
+            }
+        });
 
     }
     public void ControllerPage () {
@@ -96,6 +103,10 @@ public class OptionPage extends AppCompatActivity {
             help.stop();
         }
 
+    }
+    public void joystick () {
+        Intent intent = new Intent(this, JoystickPage.class);
+        startActivity(intent);
     }
 }
 

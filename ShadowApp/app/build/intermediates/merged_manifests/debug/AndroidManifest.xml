@@ -23,6 +23,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.ShadowApp" >
         <activity android:name="com.example.shadowapp.ProfilePage" />
         <activity android:name="com.example.shadowapp.MainActivity" >
@@ -38,6 +39,9 @@
             android:name="com.example.shadowapp.VoiceCommand"
             android:parentActivityName="com.example.shadowapp.ControllerPage" />
         <activity android:name="com.example.shadowapp.RegisterPage" />
+        <activity
+            android:name="com.example.shadowapp.JoystickPage"
+            android:parentActivityName="com.example.shadowapp.ControllerPage" />
         <activity android:name="com.example.shadowapp.ControllerPage" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
