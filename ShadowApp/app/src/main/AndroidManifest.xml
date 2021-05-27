@@ -16,6 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShadowApp">
+
         <activity android:name=".ProfilePage" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -30,6 +31,9 @@
             android:name=".VoiceCommand"
             android:parentActivityName=".ControllerPage" />
         <activity android:name=".RegisterPage" />
+        <activity
+            android:name="com.example.shadowapp.JoystickPage"
+            android:parentActivityName="com.example.shadowapp.ControllerPage" />
         <activity
             android:name=".ControllerPage"
             tools:ignore="Instantiatable" />

@@ -64,6 +64,19 @@ array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
 array preloaded_fonts
+attr JV_autoReCenterButton
+attr JV_backgroundColor
+attr JV_backgroundSizeRatio
+attr JV_borderAlpha
+attr JV_borderColor
+attr JV_borderWidth
+attr JV_buttonColor
+attr JV_buttonDirection
+attr JV_buttonImage
+attr JV_buttonSizeRatio
+attr JV_buttonStickToBorder
+attr JV_enabled
+attr JV_fixedCenter
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -337,6 +350,7 @@ attr deriveConstraintsFrom
 attr dialogCornerRadius
 attr dialogPreferredPadding
 attr dialogTheme
+attr directions_color
 attr displayOptions
 attr divider
 attr dividerHorizontal
@@ -483,6 +497,8 @@ attr indicatorDirectionLinear
 attr indicatorInset
 attr indicatorSize
 attr initialActivityCount
+attr inner_color
+attr inner_radius
 attr insetForeground
 attr isLightTheme
 attr isMaterialTheme
@@ -664,6 +680,8 @@ attr motionTarget
 attr motion_postLayoutCollision
 attr motion_triggerOnCollision
 attr moveWhenScrollAtTop
+attr moveable_color
+attr moveable_radius
 attr multiChoiceItemLayout
 attr navigationContentDescription
 attr navigationIcon
@@ -681,6 +699,8 @@ attr onNegativeCross
 attr onPositiveCross
 attr onShow
 attr onTouchUp
+attr outer_color
+attr outer_width
 attr overlapAnchor
 attr overlay
 attr paddingBottomNoButtons
@@ -1072,6 +1092,10 @@ color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
+color joypad_grey_300
+color joypad_grey_50
+color joypad_grey_500
+color joypad_grey_900
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1349,6 +1373,9 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen joypad_inner_radius
+dimen joypad_moveable_radius
+dimen joypad_outer_width
 dimen material_clock_display_padding
 dimen material_clock_face_margin_top
 dimen material_clock_hand_center_dot_radius
@@ -1865,6 +1892,7 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id blocking
+id both
 id bottom
 id bounce
 id browser_actions_header_text
@@ -1978,6 +2006,7 @@ id hideable
 id home
 id homeAsUp
 id honorRequest
+id horizontal
 id icon
 id icon_group
 id icon_only
@@ -1995,6 +2024,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id joystickView_left
 id jumpToEnd
 id jumpToStart
 id labelGroup
@@ -2195,6 +2225,8 @@ id textView2
 id textView3
 id textView6
 id textView9
+id textView_angle_left
+id textView_strength_left
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2225,6 +2257,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id vertical
 id videoView
 id view_offset_helper
 id view_tree_lifecycle_owner
@@ -3369,6 +3402,8 @@ styleable GradientColor android_startColor android_endColor android_type android
 styleable GradientColorItem android_color android_offset
 styleable ImageFilterView altSrc brightness contrast crossfade overlay round roundPercent saturation warmth
 styleable Insets paddingBottomSystemWindowInsets paddingLeftSystemWindowInsets paddingRightSystemWindowInsets
+styleable JoypadView directions_color inner_color inner_radius moveable_color moveable_radius outer_color outer_width
+styleable JoystickView JV_autoReCenterButton JV_backgroundColor JV_backgroundSizeRatio JV_borderAlpha JV_borderColor JV_borderWidth JV_buttonColor JV_buttonDirection JV_buttonImage JV_buttonSizeRatio JV_buttonStickToBorder JV_enabled JV_fixedCenter
 styleable KeyAttribute android_alpha android_transformPivotX android_transformPivotY android_translationX android_translationY android_scaleX android_scaleY android_rotation android_rotationX android_rotationY android_translationZ android_elevation curveFit framePosition motionProgress motionTarget transitionEasing transitionPathRotate
 styleable KeyCycle android_alpha android_translationX android_translationY android_scaleX android_scaleY android_rotation android_rotationX android_rotationY android_translationZ android_elevation curveFit framePosition motionProgress motionTarget transitionEasing transitionPathRotate waveOffset wavePeriod waveShape waveVariesBy
 styleable KeyFrame
