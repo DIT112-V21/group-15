@@ -4,7 +4,7 @@
 ![caraid1-removebg-preview1](https://user-images.githubusercontent.com/81308510/119974140-9df48b80-bfb4-11eb-941e-13992d67f416.png)
 
 
-                                                [Link to our demo video]
+                                                https://youtu.be/iof-ODHmS3k
 
 # 1.0 Our Product
  We made a system where the user can control the Arduino based smart car in several different ways. Our top feature for the users is that they can use their voice to control the car entirely. But the car can also control itself by its sensors, which will help the user to avoid obstacles in the terrain. 
