@@ -2595,6 +2595,7 @@ string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string name
 string name2
+string not_a_member_click_here_to_create_an_account
 string not_a_member_create_an_account
 string password
 string password1
