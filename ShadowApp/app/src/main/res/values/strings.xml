@@ -69,6 +69,7 @@
     <string name="voice3">Voice</string>
     <string name="controller4">Controller</string>
     <string name="caraid3">CarAid</string>
+    <string name="not_a_member_click_here_to_create_an_account">Not A Member ? Click Here To Create An Account.</string>
 
 
 </resources>

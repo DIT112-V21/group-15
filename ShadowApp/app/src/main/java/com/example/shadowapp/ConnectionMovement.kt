@@ -20,11 +20,11 @@ open class ConnectionMovement : AppCompatActivity() {
         val SPEED_TOPIC = "/smartcar/control/speed"
         val TURNING_TOPIC = "/smartcar/control/turning"
         val LIMITER = -1000
-        val MOVEMENT_SPEED = 70
+        val MOVEMENT_SPEED = 60
         val REVERSE_CAR_MOVEMENT = -1
         val IDLE_SPEED = 0
         val STRAIGHT_ANGLE = 0
-        val STEERING_ANGLE = 50
+        val STEERING_ANGLE = 30
         val QOS = 1
         val IMAGE_WIDTH = 320 //320
         val IMAGE_HEIGHT = 240 //240
